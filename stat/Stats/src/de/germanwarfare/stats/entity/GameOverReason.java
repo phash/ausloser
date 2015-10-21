@@ -1,0 +1,19 @@
+package de.germanwarfare.stats.entity;
+
+public class GameOverReason {
+	private String reason;
+
+	public GameOverReason(String reason) {
+		super();
+		this.reason = reason;
+	}
+
+	public String getReason() {
+		return reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+
+}
