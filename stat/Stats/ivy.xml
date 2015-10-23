@@ -19,6 +19,18 @@
 	<dependencies defaultconf="default" defaultconfmapping="default->default">
 		<!-- The core server part of Vaadin -->
 		<dependency org="com.vaadin" name="vaadin-server" rev="&vaadin.version;" />
+<dependency org="org.hibernate" name="hibernate-core" rev="5.0.2.Final"/>
+<dependency org="org.hibernate" name="hibernate-entitymanager" rev="5.0.2.Final"/>
+<dependency org="org.hibernate" name="hibernate-annotations" rev="3.5.6-Final"/>
+<dependency org="org.hibernate" name="hibernate-commons-annotations" rev="3.3.0.ga"/>
+<dependency org="org.hibernate" name="hibernate-ehcache" rev="5.0.2.Final"/>
+<dependency org="org.hibernate" name="hibernate-c3p0" rev="5.0.2.Final"/>
+<dependency org="org.springframework" name="spring-context" rev="4.2.2.RELEASE"/>
+<dependency org="org.springframework" name="spring-core" rev="4.2.2.RELEASE"/>
+<dependency org="org.springframework" name="spring-tx" rev="4.2.2.RELEASE"/>
+<dependency org="org.springframework" name="spring-orm" rev="4.2.2.RELEASE"/>
+<dependency org="org.springframework.security" name="spring-security-core" rev="4.0.2.RELEASE"/>
+<dependency org="javax.transaction" name="jta" rev="1.1"/>
 
 		<!-- Vaadin themes -->
 		<dependency org="com.vaadin" name="vaadin-themes" rev="&vaadin.version;" />
