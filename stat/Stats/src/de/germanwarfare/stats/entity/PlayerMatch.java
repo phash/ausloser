@@ -1,21 +1,41 @@
 package de.germanwarfare.stats.entity;
 
-public class PlayerMatch {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
+@Entity
+public class PlayerMatch extends BasisEntity {
+
+	@ManyToOne
 	private Player player;
-
+	@Column
 	private int damagedealt;
+	@Column
+
 	private int killsenemies;
+	@Column
 	private int spottedenemies;
+	@Column
 	private int teamid;
+	@Column
 	private int spottingdamage;
+	@Column
 	private int assists;
+	@Column
 	private int xpearned;
+	@ManyToOne
 	private Vehicle vehicle;
+	@ManyToOne
 	private Player killedby;
+	@ManyToOne
 	private Killreason killedreason;
+	@Column
 	private boolean survived;
+	@Column
 	private boolean isinlocalplayersplatoon;
+	@OneToMany
 	private Battalion battalion;
 
 	public PlayerMatch(Player player) {

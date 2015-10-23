@@ -1,7 +1,13 @@
 package de.germanwarfare.stats.entity;
 
-public class Player {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
+public class Player extends BasisEntity {
+	@Column
 	private String name;
+	@Column
 	private int givenid;
 
 	public String getName() {

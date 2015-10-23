@@ -1,9 +1,16 @@
 package de.germanwarfare.stats.entity;
 
-public class Vehicle {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
+@Entity
+public class Vehicle {
+	@Column
 	private String name;
-	private Tier tier;
+	@Column
+	private int tier;
+	@OneToMany(targetEntity = VehicleType.class)
 	private VehicleType type;
 
 	public String getName() {
@@ -14,11 +21,11 @@ public class Vehicle {
 		this.name = name;
 	}
 
-	public Tier getTier() {
+	public int getTier() {
 		return tier;
 	}
 
-	public void setTier(Tier tier) {
+	public void setTier(int tier) {
 		this.tier = tier;
 	}
 

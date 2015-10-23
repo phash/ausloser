@@ -2,6 +2,9 @@ package de.germanwarfare.stats;
 
 import java.util.ArrayList;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
+
 import de.germanwarfare.stats.entity.Level;
 
 public class LevelService {
@@ -10,12 +13,21 @@ public class LevelService {
 
 	public LevelService() {
 		super();
+		em = Persistence.createEntityManagerFactory("awestat").createEntityManager();
 		levels = new ArrayList<>();
 	}
+
+	EntityManager em;
 
 	private Level createLevelByName(String string) {
 		Level neu = new Level(string);
 		levels.add(neu);
+		// SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		//
+		// Session session = sessionFactory.openSession();
+		// session.beginTransaction();
+		// session.save(neu);
+		em.persist(neu);
 		System.out.println("new level: " + string);
 		return neu;
 	}

@@ -1,6 +1,11 @@
 package de.germanwarfare.stats.entity;
 
-public class GameOverReason {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
+public class GameOverReason extends BasisEntity {
+	@Column
 	private String reason;
 
 	public GameOverReason(String reason) {

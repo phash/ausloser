@@ -1,12 +1,17 @@
 package de.germanwarfare.stats.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
 /**
  * die Map
  *
  * @author msir
  *
  */
-public class Level {
+@Entity
+public class Level extends BasisEntity {
+	@Column
 	private String name;
 
 	public Level(String name) {

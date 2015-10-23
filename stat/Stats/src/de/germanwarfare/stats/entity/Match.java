@@ -3,16 +3,31 @@ package de.germanwarfare.stats.entity;
 import java.util.Date;
 import java.util.List;
 
-public class Match {
-	private List<PlayerMatch> players;
-	private MatchType matchType;
-	private Level level;
-	private String matchId;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
+@Entity
+public class Match extends BasisEntity {
+	@OneToMany(mappedBy = "matches")
+	private List<PlayerMatch> players;
+	@ManyToOne
+
+	private MatchType matchType;
+	@ManyToOne(targetEntity = Level.class)
+	private Level level;
+	@Column
+	private String matchId;
+	@Column
 	private int wincondition;
+	@OneToMany(targetEntity = GameOverReason.class)
 	private GameOverReason gameOverReason;
-	private Tier matchTier;
+	@Column
+	private int matchTier;
+	@Column
 	private Date timestamp;
+	@Column
 	private int duration;
 
 	public List<PlayerMatch> getPlayers() {
@@ -55,11 +70,11 @@ public class Match {
 		this.gameOverReason = gameOverReason;
 	}
 
-	public Tier getMatchTier() {
+	public int getMatchTier() {
 		return matchTier;
 	}
 
-	public void setMatchTier(Tier matchTier) {
+	public void setMatchTier(int matchTier) {
 		this.matchTier = matchTier;
 	}
 

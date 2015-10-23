@@ -22,7 +22,6 @@ import de.germanwarfare.stats.entity.Level;
 import de.germanwarfare.stats.entity.Match;
 import de.germanwarfare.stats.entity.Player;
 import de.germanwarfare.stats.entity.PlayerMatch;
-import de.germanwarfare.stats.entity.Tier;
 
 public class DataPublisher {
 
@@ -273,8 +272,10 @@ public class DataPublisher {
 				match.setGameOverReason(playedGameover);
 			}
 			if (string.startsWith("matchtier")) {
-				Tier playedtier = Tier.getTierForInt(string.substring(11, string.length() - 1).toLowerCase());
-				hlayout.addComponent(new Label(playedtier.name()));
+				String removed = string.replace("\"", "");
+				String[] split = removed.split("=");
+				int playedtier = Integer.valueOf(split[1]);
+				hlayout.addComponent(new Label("" + playedtier));
 				match.setMatchTier(playedtier);
 			}
 			// TODO - FIXME zeit is noch falsch
